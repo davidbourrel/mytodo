@@ -32,7 +32,7 @@ const ThemeSwitcher = () => {
     <Button
       headless
       onClick={handleDarkModeChange}
-      className='bg-neutral-700 rounded-full p-1'
+      className='bg-neutral-700 border border-neutral-500 rounded-full h-8 w-8 flex-shrink-0'
     >
       {themeIcon}
     </Button>

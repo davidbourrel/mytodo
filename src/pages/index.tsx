@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import ListTodo from '@/components/modules/ListTodo';
 
 const Home = () => {
   return (
@@ -10,9 +11,10 @@ const Home = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <div>
-        <h1 className='text-3xl text-center text-primary-900 dark:text-white'>
-          TODO LIST
+        <h1 className='text-3xl text-center my-5 mb-10 text-primary-900 dark:text-white'>
+          Todo List
         </h1>
+        <ListTodo />
       </div>
     </>
   );
