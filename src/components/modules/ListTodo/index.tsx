@@ -1,18 +1,18 @@
-import Spinner from '@/components/images/icons/Spinner';
-import { useAllTodos } from '@/api/todo';
 import { TodoProps } from '@/_types/todo';
 import Todo from '../../elements/Todo';
+import { ListTodoProps } from './types';
 
-const ListTodo = () => {
-  const { data, isLoading, isError } = useAllTodos();
-
-  if (isLoading) return <Spinner />;
-  if (isError) return <p>Error !</p>;
+const ListTodo = ({ todos, completeTodo }: ListTodoProps) => {
+  const nonCompletedTodoFirst = [...todos].sort(
+    // Convert the 2 boolean values to numbers and subtract the first number from the second
+    (a, b) => Number(a.completed) - Number(b.completed)
+  );
 
   return (
     <ul className='flex flex-col gap-4'>
-      {data?.todos &&
-        data.todos.map((todo: TodoProps) => <Todo key={todo.id} {...todo} />)}
+      {nonCompletedTodoFirst.map((todo: TodoProps) => (
+        <Todo key={todo.id} todo={todo} completeTodo={completeTodo} />
+      ))}
     </ul>
   );
 };

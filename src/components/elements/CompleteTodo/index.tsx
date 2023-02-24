@@ -1,9 +1,18 @@
-import { TodoProps } from '@/_types/todo';
+import { CompleteTodoProps } from './types';
 
-function CompleteTodo({ completed }: Pick<TodoProps, 'completed'>) {
+function CompleteTodo({ id, completed, completeTodo }: CompleteTodoProps) {
+  const handleComplete = () => {
+    completeTodo(id, !completed);
+  };
+
   return (
     <div className='flex'>
-      <input className='mr-2' type='checkbox' checked={completed} />
+      <input
+        className='mr-2'
+        type='checkbox'
+        checked={completed}
+        onChange={handleComplete}
+      />
     </div>
   );
 }

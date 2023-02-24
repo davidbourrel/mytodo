@@ -11,3 +11,8 @@ export interface TodoProps {
   completed: boolean;
   userId: number;
 }
+
+export type completeTodoType = (
+  id: number,
+  completed: boolean
+) => Promise<void>;
