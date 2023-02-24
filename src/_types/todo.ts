@@ -12,6 +12,7 @@ export interface TodoProps {
   userId: number;
 }
 
+export type deleteTodoType = (id: number) => Promise<void>;
 export type completeTodoType = (
   id: number,
   completed: boolean

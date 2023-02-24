@@ -1,3 +1,3 @@
 import { TodoProps } from '@/_types/todo';
 
-export interface DeleteTodoProps extends Pick<TodoProps, 'id'> {}
+export type DeleteTodoProps = Pick<TodoProps, 'id'>;

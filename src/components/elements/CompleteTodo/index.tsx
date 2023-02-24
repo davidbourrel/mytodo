@@ -1,9 +1,10 @@
+import useCompleteTodo from '@/contexts/todoContext/useCompleteTodo';
 import { CompleteTodoProps } from './types';
 
-function CompleteTodo({ id, completed, completeTodo }: CompleteTodoProps) {
-  const handleComplete = () => {
-    completeTodo(id, !completed);
-  };
+function CompleteTodo({ id, completed }: CompleteTodoProps) {
+  const { completeTodo } = useCompleteTodo();
+
+  const handleComplete = () => completeTodo(id, !completed);
 
   return (
     <div className='flex'>

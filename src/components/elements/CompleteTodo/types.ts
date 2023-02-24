@@ -1,5 +1,3 @@
-import { completeTodoType, TodoProps } from '@/_types/todo';
+import { TodoProps } from '@/_types/todo';
 
-export interface CompleteTodoProps extends Pick<TodoProps, 'completed' | 'id'> {
-  completeTodo: completeTodoType;
-}
+export type CompleteTodoProps = Pick<TodoProps, 'completed' | 'id'>;
