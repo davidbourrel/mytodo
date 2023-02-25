@@ -14,7 +14,7 @@ function CompleteTodo({ id, completed }: CompleteTodoProps) {
   return (
     <div className='flex'>
       <input
-        className='mr-2'
+        className='w-6 h-6 text-green-600 border-2 rounded-md focus:ring-0'
         type='checkbox'
         checked={completed}
         onChange={handleComplete}
