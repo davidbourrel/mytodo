@@ -18,7 +18,7 @@ export default function TodoProvider({ children }: TodoProviderProps) {
       setIsError(false);
 
       try {
-        const res = await fetch(`${process.env.TODO_BASE_URL}`);
+        const res = await fetch(`${process.env.TODO_BASE_URL}?limit=8`);
         const data = await res.json();
         setTodos(data?.todos);
       } catch (err) {
