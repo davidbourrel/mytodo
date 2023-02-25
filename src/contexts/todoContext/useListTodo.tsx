@@ -4,15 +4,15 @@ import { TodoContext } from './todo.types';
 
 type UseHandleSetTodoResult = Pick<
   TodoContext,
-  'todos' | 'isLoading' | 'isError'
+  'todos' | 'isLoading' | 'error'
 >;
 
 const useListTodo = (): UseHandleSetTodoResult => {
-  const { todos, isLoading, isError } = useContext(todoContext);
+  const { todos, isLoading, error } = useContext(todoContext);
 
   return useMemo(
-    () => ({ todos, isLoading, isError }),
-    [todos, isLoading, isError]
+    () => ({ todos, isLoading, error }),
+    [todos, isLoading, error]
   );
 };
 

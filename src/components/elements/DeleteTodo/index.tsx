@@ -2,6 +2,7 @@ import { MouseEvent } from 'react';
 import useDeleteTodo from '@/contexts/todoContext/useDeleteTodo';
 import { DeleteTodoProps } from './types';
 import TrashIcon from '@/components/images/icons/TrashIcon';
+import Button from '../Button';
 
 const DeleteTodo = ({ id }: DeleteTodoProps) => {
   const { deleteTodo } = useDeleteTodo();
@@ -13,13 +14,14 @@ const DeleteTodo = ({ id }: DeleteTodoProps) => {
   };
 
   return (
-    <span
+    <Button
+      headless
       onClick={handleDelete}
-      className='p-2 h-max border-2 border-red-700 rounded select-none transition hover:cursor-pointer hover:bg-red-700'
+      className='p-2 h-max border-2 border-red-700 rounded transition hover:cursor-pointer hover:bg-red-700'
       title='Delete todo'
     >
       <TrashIcon />
-    </span>
+    </Button>
   );
 };
 export default DeleteTodo;
